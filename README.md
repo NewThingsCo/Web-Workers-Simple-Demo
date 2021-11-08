@@ -1,21 +1,14 @@
-var prime = (num) => {
-    for (var i = 0; i <= num; i++) {
-        for (var j = 2; j < i; j++) {
-            if (i % j == 0) {
-                break;
-            }
-        }
-    }
-};
+# About
 
-// Worker Global Scope, worker script
-// 'self' simply returns the current context (WorkerGlobalScope)
-self.addEventListener('message', function(event) {
-    const num = event.data;
-    const result = prime(num);
+A simple demo to demonstrate how to shift data processing from the main thread and improve the UI from a UX perspective.
 
-    self.postMessage(result);
-    self.close();
-});
+# To get started
 
+```
+yarn install # or npm install
+yarn serve ./
+```
 
+Then visit [http://localhost:3000](http://localhost:3000).
+
+Click on either of the "Run Long Task" buttons. One will run it in the main javascript thread. You should see some animations blocked and frozen. Clicking on the other button should not block any of the animations and demonstrate a simple principal about how to shift data processing to a worker is better for the UI.
