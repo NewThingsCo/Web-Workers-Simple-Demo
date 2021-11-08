@@ -2,6 +2,8 @@
 
 A simple demo to demonstrate how to shift data processing from the main thread and improve the UI from a UX perspective.
 
+![Screenshot of demo](./screenshot.png)
+
 # To get started
 
 ```
