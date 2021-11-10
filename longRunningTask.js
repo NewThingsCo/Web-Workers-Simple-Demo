@@ -1,4 +1,4 @@
-const prime = (num) => {
+const intensive = (num) => {
     for(let i = 0; i <= num; i++) {
         for(let j = 2; j < i; j++) {
             if(i % j === 0) {
@@ -23,7 +23,7 @@ const runHeavyTaskMainThread = function(elm) {
     // setTimeout exists to allow the button a chance to change
     // otherwise that too is blocked by the prime calculations
     setTimeout(function() {
-        prime(200000);
+        intensive(200000);
         enableElm(elm);
     }, 100)
 };
