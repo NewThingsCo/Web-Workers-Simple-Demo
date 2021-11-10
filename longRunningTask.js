@@ -34,7 +34,7 @@ const runHeavyTaskWorkerThread = function(elm) {
         return;
     }
     disableElm(elm);
-    var worker = new Worker("./worker.js");
+    const worker = new Worker("./worker.js");
     worker.postMessage(200000);
     worker.addEventListener('message', function() {
         enableElm(elm);

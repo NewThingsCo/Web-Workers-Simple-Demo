@@ -12,7 +12,7 @@ const intensive = (num) => {
 // 'self' simply returns the current context (WorkerGlobalScope)
 self.addEventListener('message', function(event) {
     const num = event.data;
-    prime(num);
+    intensive(num);
 
     self.postMessage('done');
     self.close();
