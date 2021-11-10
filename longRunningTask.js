@@ -1,12 +1,4 @@
-const intensive = (num) => {
-    for(let i = 0; i <= num; i++) {
-        for(let j = 2; j < i; j++) {
-            if(i % j === 0) {
-                break;
-            }
-        }
-    }
-};
+/** longRunningTask.js **/
 
 const disableElm = function(elm) {
     elm.classList.add('spinner');
@@ -23,7 +15,9 @@ const runHeavyTaskMainThread = function(elm) {
     // setTimeout exists to allow the button a chance to change
     // otherwise that too is blocked by the prime calculations
     setTimeout(function() {
-        intensive(200000);
+        console.log(
+            intensive(200000)
+        );
         enableElm(elm);
     }, 100)
 };
@@ -36,7 +30,8 @@ const runHeavyTaskWorkerThread = function(elm) {
     disableElm(elm);
     const worker = new Worker("./worker.js");
     worker.postMessage(200000);
-    worker.addEventListener('message', function() {
+    worker.addEventListener('message', function(data) {
+        console.log(data.data);
         enableElm(elm);
     });
 };
