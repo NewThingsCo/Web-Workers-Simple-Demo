@@ -397,16 +397,30 @@ div.centerAlignment {
     animation: spinner .6s linear infinite;
 }
 
+div.logoContainer{
+    position: absolute;
+    width: 100%;
+}
+
 .logo{
-    animation: MoveUpDown 1s ease-in-out infinite;
+    animation: MoveUpDown 1s ease-in-out infinite, Rotate 10s ease-in-out infinite;
     position: absolute;
 }
 
 @keyframes MoveUpDown {
     0%, 100% {
-        bottom: calc(50% + 50px);
+        bottom: calc(50% - 356px);
     }
     50% {
-        bottom: calc(50% + 100px);
+        bottom: calc(50% );
+    }
+}
+
+@keyframes Rotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(720deg);
     }
 }
