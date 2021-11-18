@@ -409,9 +409,19 @@ div.logoContainer{
 
 @keyframes MoveUpDown {
     0%, 100% {
+        /**
+         Interestingly if you leave transform in here the second animation
+         will still work but it will become blocked in the ui when the rest of
+         the animations do. If you comment out the transform from here and in
+         the 50% then the `Rotate` animation is not blocked.
+
+         I have no idea why.
+         */
+        transform: rotate(0deg);
         bottom: calc(50% - 356px);
     }
     50% {
+        transform: rotate(0deg);
         bottom: calc(50% );
     }
 }
